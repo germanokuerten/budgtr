@@ -5,20 +5,30 @@
 
 <body>
     <nav>
-        <!-- Create New Fruit Link Here -->
+        <!-- Create New Budget Link Here -->
     </nav>
 
-    <h1>Budgetter</h1>
+    <div class="container">
+        <h1>Budgetter</h1>
 
-    <ul>
-        <% for (let i = 0; i < allBudgets.length; i++) { %> 
-        <li>
-            <a href="/budget/<%= i %> "> <%= allBudgets[i].name %> </a>
-
-
-        </li>
-        <% } %>
-    </ul>
+        
+        <table>
+            <% for (let i = 0; i < allBudgets.length; i++) { %> 
+            <tr>
+            <td>
+                <%= allBudgets[i].date %>
+            </td>
+            <td>
+                <a href="/budget/<%= i %> "> <%= allBudgets[i].name %> </a>
+            </td>
+            <td>
+                <%= allBudgets[i].amount %>
+            </td>
+            </tr>
+            <% } %>
+       
+        </table>
+    </div>
 
 </body>
 </html>
