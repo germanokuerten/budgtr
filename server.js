@@ -46,9 +46,14 @@ app.get("/budgets/:id", (req, res) => {
 
 // New - GET /budgets/new
 
-// Create -POST /budgets
+app.get("/budgets/new", (req, res) => {
+    res.render("new.ejs")
+})
 
+// Create - POST /budgets
 
+app.post("/budgets", (req, res) => {
+})
 
 
 //////////////
