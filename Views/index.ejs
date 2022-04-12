@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Create Partials for <head> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgtr</title>
+</head>
+
+<body>
+    <nav>
+        <!-- Create New Fruit Link Here -->
+    </nav>
+
+    <h1>Budget Index</h1>
+
+    <ul>
+        <% for (let i = 0; i < allBudgets.length; i++) { %> 
+        <li>
+            <a href="/budget/<%= i %> "> <%= allBudgets[i].name %> </a>
+
+
+        </li>
+        <% } %>
+    </ul>
+
+</body>
+</html>

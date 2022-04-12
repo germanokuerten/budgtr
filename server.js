@@ -34,10 +34,15 @@ app.get("/", (req, res) => {
 
 // Index - GET /budgets
 
-
-
+app.get("/budgets/", (req, res) => {
+    res.render("index.ejs", {allBudgets: budget})
+})
 
 // Show - GET /budgets/:index
+
+app.get("/budgets/:id", (req, res) => {
+    res.render("show.ejs", {budgets: budget[req.params.id]})
+})
 
 // New - GET /budgets/new
 
