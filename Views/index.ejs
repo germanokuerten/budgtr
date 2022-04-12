@@ -4,14 +4,15 @@
 <%- include("partials/head.ejs") %>  
 
 <body>
-    <nav>
-        <!-- Create New Budget Link Here -->
-    </nav>
-
+    
     <div class="container">
+        
         <h1>Budgetter</h1>
 
-        
+        <nav>
+            <a class="button" href="/budgets/new">new item</a>
+        </nav>
+      
         <table>
             <% for (let i = 0; i < allBudgets.length; i++) { %> 
             <tr>
@@ -19,7 +20,7 @@
                 <%= allBudgets[i].date %>
             </td>
             <td>
-                <a href="/budget/<%= i %> "> <%= allBudgets[i].name %> </a>
+                <a href="/budgets/<%= i %> "> <%= allBudgets[i].name %> </a>
             </td>
             <td>
                 <%= allBudgets[i].amount %>
