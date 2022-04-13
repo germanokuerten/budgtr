@@ -4,7 +4,7 @@
 <%- include("partials/head.ejs") %>  
 
 <body>
-    
+
     <div class="container">
 
         <h1>Budgetter</h1>
@@ -23,12 +23,19 @@
                 <a href="/budgets/<%= i %> "> <%= allBudgets[i].name %> </a>
             </td>
             <td>
-                <%= allBudgets[i].amount %>
+                <%= allBudgets[i].amount %>  
             </td>
             </tr>
+            
             <% } %>
-       
+           
         </table>
+        <div class="totalbalance">
+        
+        Total balance: <%= bankA %>
+
+        </div>
+        
     </div>
 
 </body>

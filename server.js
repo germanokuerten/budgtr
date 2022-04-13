@@ -49,7 +49,28 @@ app.get("/", (req, res) => {
 // Index - GET /budgets
 
 app.get("/budgets/", (req, res) => {
-    res.render("index.ejs", {allBudgets: budget})
+
+    // map extracts all of the amounts
+    let sum = budget.map(item => item.amount) 
+    // test
+    console.log(sum)
+    // reduce() method does the sum
+    let bankAccount = sum.reduce((a, b) => a + b, 0)
+    console.log(bankAccount)
+
+    let color = "";
+
+    if (bankAccount <=0){
+        color = "red"
+    } else if (bankAccount >= 1000) {
+        color = "green"
+    }
+    console.log(color) // to see that the color is correct
+    res.render('index.ejs', {  //passing objects to index.ejs
+    allBudgets: budget, // passing Budget object
+    bankA: bankAccount, // passing the BankAccount variable to index.ejs
+    col:color // passing the color variable to index.ejs
+})
 })
 
 // New - GET /budgets/new  
