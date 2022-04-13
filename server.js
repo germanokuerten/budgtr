@@ -52,16 +52,10 @@ app.get("/budgets/", (req, res) => {
     res.render("index.ejs", {allBudgets: budget})
 })
 
-// Show - GET /budgets/:index
-
-app.get("/budgets/:id", (req, res) => {
-    res.render("show.ejs", {budgets: budget[req.params.id]})
-});
-
 // New - GET /budgets/new  
 // Why can't I just have /budgets/new??? Why do I need to do /budgetss?
 
-app.get("/budgetss/new", (req, res) => {
+app.get("/budgets/new", (req, res) => {
     res.render("new.ejs")
   })
 
@@ -78,6 +72,12 @@ app.post("/budgets", (req, res) => {
     console.log("req body is", req.body)
     res.send("request received")
 })
+
+// Show - GET /budgets/:index
+
+app.get("/budgets/:id", (req, res) => {
+    res.render("show.ejs", {budgets: budget[req.params.id]})
+});
 
 // app.post("/budgets/", (req, res) => {
 // })
