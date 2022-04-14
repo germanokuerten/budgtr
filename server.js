@@ -92,7 +92,8 @@ app.get("/budgets/", (req, res) => {
 })
 
 // New - GET /budgets/new  
-// Why can't I just have /budgets/new??? Why do I need to do /budgetss?
+// Why can't I just have /budgets/new??? Why do I need to do /budgetss? -> B/c I need to follow this order: 
+// INDUCES - Index, New, Delete, Update, Create, Edit, Show
 
 app.get("/budgets/new", (req, res) => {
     res.render("new.ejs")
