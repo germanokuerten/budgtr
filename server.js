@@ -50,14 +50,32 @@ app.get("/", (req, res) => {
 
 app.get("/budgets/", (req, res) => {
 
-    // map extracts all of the amounts
-    let sum = budget.map(item => item.amount) 
-    // test
-    console.log(sum)
-    // reduce() method does the sum
-    let bankAccount = sum.reduce((a, b) => a + b, 0)
-    console.log(bankAccount)
+    // // map extracts all of the amounts
+    // let sum = budget.map(item => item.amount) 
+    // // test
+    // console.log(sum)
+    // // reduce() method does the sum
+    // let bankAccount = sum.reduce((a, b) => a + b, 0)
 
+    // // 2nd method using .forEach()
+    // let total = 0;
+    // budget.forEach(item => {
+    //     total += item.amount
+    // })
+    // let bankAccount = total
+
+    // 3rd method using .reduce()
+    let totalPrice = budget.reduce((total, item) => {
+        return parseInt(total) + parseInt(item.amount);
+    }, 0);
+
+    let bankAccount = totalPrice
+
+    // parse int   .. to convert string to integer
+    // req.body.amount = parseFloat(req.body.amount);
+
+    
+    // color change
     let color = "";
 
     if (bankAccount <=0){
