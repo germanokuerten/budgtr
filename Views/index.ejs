@@ -30,13 +30,20 @@
             <% } %>
            
         </table>
-        <div class="totalbalance" style="display: inline-flex">
+        <div class="totalbalance">
         
-        <p>Total balance: </p> 
+        <p>Total balance: $</p> 
 
-        <!-- Create a space between : and $ -->
+        <!-- Create a space between : and $ ? -->
 
-        <p style="color: <%= col %>"> $<%= bankA %></p>
+        <p style="color: <%= col %>"> <%= bankA %></p>
+
+        <style>
+            .totalbalance {
+                font-size: 21px;
+                display: inline-flex;
+            }
+        </style>
 
         </div>
         
