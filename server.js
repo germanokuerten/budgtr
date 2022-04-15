@@ -42,6 +42,8 @@ app.use(methodOverride("_method"))
 // Routes
 //////////////
 
+// INDUCES - Index, New, Delete, Update, Create, Edit, Show
+
 app.get("/", (req, res) => {
     res.send("Home")
 })
@@ -73,7 +75,6 @@ app.get("/budgets/", (req, res) => {
 
     // parse int   .. to convert string to integer
     // req.body.amount = parseFloat(req.body.amount);
-
     
     // color change
     let color = "";
@@ -87,7 +88,7 @@ app.get("/budgets/", (req, res) => {
     res.render('index.ejs', {  //passing objects to index.ejs
     allBudgets: budget, // passing Budget object
     bankA: bankAccount, // passing the BankAccount variable to index.ejs
-    col:color // passing the color variable to index.ejs
+    col: color, // passing the color variable to index.ejs
 })
 })
 
